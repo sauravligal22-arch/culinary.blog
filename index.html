@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- EDIT HERE: Website title -->
+    <title>MyCulinaryBlog</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         SLIDE MENU
+         EDIT MENU ITEMS HERE
+    ========================== -->
+
+    <div class="side-menu" id="sideMenu">
+
+        <button class="close-btn" onclick="closeMenu()">×</button>
+
+        <h2>🍴 MyCulinaryBlog</h2>
+
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#recipes" onclick="closeMenu()">Recipes</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+
+    </div>
+
+
+    <!-- DARK OVERLAY -->
+
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header id="home">
+
+        <button class="menu-btn" onclick="openMenu()">
+            ☰
+        </button>
+
+        <div class="logo">
+            🍴 MyCulinaryBlog
+        </div>
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                WELCOME TO MY KITCHEN
+            </p>
+
+            <!-- EDIT HERE: Main heading -->
+
+            <h1>
+                Taste the
+                <span>Magic</span>
+            </h1>
+
+            <!-- EDIT HERE: Description -->
+
+            <p class="description">
+                Discover delicious recipes, beautiful dishes,
+                cooking tips and culinary inspiration.
+            </p>
+
+            <a href="#recipes" class="main-btn">
+                Explore Recipes
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         RECIPES
+    ========================== -->
+
+    <section id="recipes">
+
+        <div class="section-title">
+
+            <p>MY FAVORITE</p>
+
+            <h2>
+                Delicious Recipes
+            </h2>
+
+        </div>
+
+
+        <div class="recipe-container">
+
+
+            <!-- RECIPE 1 -->
+
+            <div class="recipe-card">
+
+                <div class="recipe-image pasta">
+                    🍝
+                </div>
+
+                <div class="recipe-content">
+
+                    <span>ITALIAN</span>
+
+                    <h3>
+                        Creamy Pasta
+                    </h3>
+
+                    <p>
+                        Creamy garlic pasta with herbs
+                        and parmesan cheese.
+                    </p>
+
+                    <button onclick="showRecipe('Creamy Pasta')">
+                        View Recipe →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECIPE 2 -->
+
+            <div class="recipe-card">
+
+                <div class="recipe-image salad">
+                    🥗
+                </div>
+
+                <div class="recipe-content">
+
+                    <span>HEALTHY</span>
+
+                    <h3>
+                        Fresh Green Salad
+                    </h3>
+
+                    <p>
+                        Fresh vegetables with a simple
+                        homemade dressing.
+                    </p>
+
+                    <button onclick="showRecipe('Fresh Green Salad')">
+                        View Recipe →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECIPE 3 -->
+
+            <div class="recipe-card">
+
+                <div class="recipe-image curry">
+                    🍛
+                </div>
+
+                <div class="recipe-content">
+
+                    <span>ASIAN</span>
+
+                    <h3>
+                        Spicy Curry
+                    </h3>
+
+                    <p>
+                        Aromatic spices and vegetables
+                        cooked into a delicious curry.
+                    </p>
+
+                    <button onclick="showRecipe('Spicy Curry')">
+                        View Recipe →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="about" id="about">
+
+        <div>
+
+            <p class="section-label">
+                ABOUT MY BLOG
+            </p>
+
+            <h2>
+                Cooking is an art.
+            </h2>
+
+            <p>
+                MyCulinaryBlog is a place where food,
+                creativity and cooking come together.
+            </p>
+
+        </div>
+
+        <div class="quote">
+
+            <span>“</span>
+
+            Good food brings
+            people together.
+
+            <span>”</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="contact" id="contact">
+
+        <p class="section-label">
+            STAY CONNECTED
+        </p>
+
+        <h2>
+            Get New Recipes
+        </h2>
+
+        <form onsubmit="subscribe(event)">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <button type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <h3>
+            🍴 MyCulinaryBlog
+        </h3>
+
+        <p>
+            © 2026 MyCulinaryBlog
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         RECIPE POPUP
+    ========================== -->
+
+    <div class="popup" id="recipePopup">
+
+        <div class="popup-box">
+
+            <button
+                class="popup-close"
+                onclick="closeRecipe()">
+                ×
+            </button>
+
+            <h2 id="recipeTitle">
+                Recipe
+            </h2>
+
+            <p>
+                Prepare your ingredients,
+                cook with love and enjoy your
+                delicious homemade meal!
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

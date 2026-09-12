@@ -1,0 +1,906 @@
+/* ===================================
+   MYCULINARYBLOG CSS
+   =================================== */
+
+
+/* ===================================
+   EDIT COLORS HERE
+   =================================== */
+
+:root {
+
+    /* Main purple */
+
+    --purple: #7b2cff;
+
+    /* Bright purple */
+
+    --bright-purple: #b44cff;
+
+    /* Red */
+
+    --red: #ff1744;
+
+    /* Yellow */
+
+    --yellow: #ffd600;
+
+    /* Background */
+
+    --background: #fff8ff;
+
+    /* Dark text */
+
+    --dark: #24152f;
+
+    /* White */
+
+    --white: #ffffff;
+
+}
+
+
+/* ===================================
+   BASIC RESET
+   =================================== */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--background);
+
+    color: var(--dark);
+
+}
+
+
+/* ===================================
+   HERO / BACKGROUND SLIDESHOW
+   =================================== */
+
+header {
+
+    min-height: 700px;
+
+    position: relative;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+
+    /*
+
+       EDIT BACKGROUND COLORS HERE
+
+    */
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(123,44,255,.90),
+            rgba(255,23,68,.75),
+            rgba(255,214,0,.65)
+        );
+
+}
+
+
+/* Animated background */
+
+header::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -20%;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 30%,
+            #ff1744,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 20%,
+            #ffd600,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 80%,
+            #b44cff,
+            transparent 35%
+        );
+
+    animation:
+        backgroundMove 10s infinite alternate ease-in-out;
+
+    z-index: 0;
+
+}
+
+
+@keyframes backgroundMove {
+
+    0% {
+
+        transform:
+            scale(1)
+            rotate(0deg);
+
+    }
+
+    100% {
+
+        transform:
+            scale(1.25)
+            rotate(8deg);
+
+    }
+
+}
+
+
+/* ===================================
+   LOGO
+   =================================== */
+
+.logo {
+
+    position: absolute;
+
+    top: 25px;
+    left: 30px;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    z-index: 5;
+
+}
+
+
+/* ===================================
+   MENU BUTTON
+   =================================== */
+
+.menu-btn {
+
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--yellow);
+
+    color: var(--dark);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition: .3s;
+
+}
+
+
+.menu-btn:hover {
+
+    transform: rotate(90deg) scale(1.1);
+
+}
+
+
+/* ===================================
+   HERO CONTENT
+   =================================== */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 800px;
+
+    padding: 30px;
+
+}
+
+
+.small-title {
+
+    color: var(--yellow);
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+}
+
+
+.hero-content h1 {
+
+    font-size: 80px;
+
+    margin: 20px 0;
+
+}
+
+
+.hero-content h1 span {
+
+    color: var(--yellow);
+
+}
+
+
+.description {
+
+    font-size: 20px;
+
+    max-width: 600px;
+
+    margin: auto;
+
+    line-height: 1.7;
+
+}
+
+
+/* ===================================
+   MAIN BUTTON
+   =================================== */
+
+.main-btn {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 15px 30px;
+
+    background: var(--red);
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 50px;
+
+    font-weight: bold;
+
+    transition: .3s;
+
+}
+
+
+.main-btn:hover {
+
+    background: var(--yellow);
+
+    color: var(--dark);
+
+    transform: translateY(-5px);
+
+}
+
+
+/* ===================================
+   SLIDE MENU
+   =================================== */
+
+.side-menu {
+
+    position: fixed;
+
+    top: 0;
+
+    right: -350px;
+
+    width: 320px;
+
+    height: 100vh;
+
+    background:
+
+        linear-gradient(
+            160deg,
+            #651fff,
+            #ff1744
+        );
+
+    padding: 80px 35px;
+
+    z-index: 100;
+
+    transition: .4s;
+
+    box-shadow:
+        -10px 0 30px rgba(0,0,0,.3);
+
+}
+
+
+.side-menu.active {
+
+    right: 0;
+
+}
+
+
+.side-menu h2 {
+
+    color: var(--yellow);
+
+    margin-bottom: 40px;
+
+}
+
+
+.side-menu a {
+
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    margin: 25px 0;
+
+    transition: .3s;
+
+}
+
+
+.side-menu a:hover {
+
+    color: var(--yellow);
+
+    transform: translateX(10px);
+
+}
+
+
+/* Close button */
+
+.close-btn {
+
+    position: absolute;
+
+    right: 20px;
+
+    top: 20px;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 35px;
+
+    cursor: pointer;
+
+}
+
+
+/* ===================================
+   OVERLAY
+   =================================== */
+
+.overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.6);
+
+    z-index: 90;
+
+    display: none;
+
+}
+
+
+.overlay.active {
+
+    display: block;
+
+}
+
+
+/* ===================================
+   RECIPES SECTION
+   =================================== */
+
+section {
+
+    padding: 90px 7%;
+
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+
+.section-title p,
+.section-label {
+
+    color: var(--red);
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 45px;
+
+    margin-top: 10px;
+
+}
+
+
+/* ===================================
+   RECIPE CARDS
+   =================================== */
+
+.recipe-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+
+.recipe-card {
+
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px
+        rgba(100,40,150,.15);
+
+    transition: .3s;
+
+}
+
+
+.recipe-card:hover {
+
+    transform:
+        translateY(-10px);
+
+}
+
+
+/* Food image */
+
+.recipe-image {
+
+    height: 220px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 100px;
+
+}
+
+
+/* EDIT FOOD COLORS */
+
+.pasta {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd600,
+            #ff1744
+        );
+
+}
+
+
+.salad {
+
+    background:
+        linear-gradient(
+            135deg,
+            #76ff03,
+            #00e676
+        );
+
+}
+
+
+.curry {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9800,
+            #ff1744
+        );
+
+}
+
+
+.recipe-content {
+
+    padding: 25px;
+
+}
+
+
+.recipe-content span {
+
+    color: var(--purple);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+.recipe-content h3 {
+
+    font-size: 25px;
+
+    margin: 8px 0;
+
+}
+
+
+.recipe-content p {
+
+    color: #766a7d;
+
+    line-height: 1.6;
+
+}
+
+
+.recipe-content button {
+
+    margin-top: 20px;
+
+    border: none;
+
+    background: none;
+
+    color: var(--red);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+/* ===================================
+   ABOUT
+   =================================== */
+
+.about {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #7b2cff,
+            #ff1744
+        );
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+}
+
+
+.about h2 {
+
+    font-size: 50px;
+
+    margin: 15px 0;
+
+}
+
+
+.about p {
+
+    line-height: 1.8;
+
+}
+
+
+.quote {
+
+    font-size: 35px;
+
+    font-style: italic;
+
+    color: var(--yellow);
+
+}
+
+
+/* ===================================
+   CONTACT
+   =================================== */
+
+.contact {
+
+    text-align: center;
+
+}
+
+
+.contact h2 {
+
+    font-size: 45px;
+
+    margin: 15px;
+
+}
+
+
+form {
+
+    display: flex;
+
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    gap: 10px;
+
+}
+
+
+input {
+
+    flex: 1;
+
+    padding: 16px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+}
+
+
+form button {
+
+    padding: 15px 25px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--purple);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+
+/* ===================================
+   FOOTER
+   =================================== */
+
+footer {
+
+    background: #24152f;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px;
+
+}
+
+
+footer h3 {
+
+    color: var(--yellow);
+
+    margin-bottom: 10px;
+
+}
+
+
+/* ===================================
+   POPUP
+   =================================== */
+
+.popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.7);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 200;
+
+}
+
+
+.popup.active {
+
+    display: flex;
+
+}
+
+
+.popup-box {
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    max-width: 500px;
+
+    width: 90%;
+
+    text-align: center;
+
+}
+
+
+.popup-box h2 {
+
+    color: var(--purple);
+
+    margin-bottom: 20px;
+
+}
+
+
+.popup-close {
+
+    float: right;
+
+    border: none;
+
+    background: none;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+}
+
+
+/* ===================================
+   MOBILE
+   =================================== */
+
+@media (max-width: 800px) {
+
+
+    .hero-content h1 {
+
+        font-size: 55px;
+
+    }
+
+
+    .recipe-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .about {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    form {
+
+        flex-direction: column;
+
+    }
+
+
+    .logo {
+
+        font-size: 17px;
+
+    }
+
+}
